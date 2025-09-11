@@ -1,10 +1,10 @@
-export default function CartItem({ item }) {
+export default function CartItem({ item, addToCart, removeFromCart }) {
   return (
     <li className="cart-item">
       {item.image} {item.name}
-      <button>-</button>
-      <span>{item.quantity}</span>
-      <button>+</button>
+      <button onClick={() => removeFromCart(item)}>-</button>
+      <span className="cart-item-quantity">{item.quantity}</span>
+      <button onClick={() => addToCart(item)}>+</button>
     </li>
   );
 }
